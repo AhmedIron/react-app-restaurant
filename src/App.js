@@ -4,7 +4,6 @@ import NavBar from "./components/Navbar"
 import Header from "./components/Header"
 import Category from './components/category';
 import Cards from './components/Cards';
-import Slider from './components/slider';
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
 
               <NavBar />
       <Container>
-      <Slider />
         <Header />
         <Category />
         <Cards />
