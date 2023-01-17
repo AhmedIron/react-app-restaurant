@@ -32,7 +32,7 @@ function Login(e) {
     }
     
       
-    await axios.post("http://localhost:8000/api/users/login", data)
+    await axios.post("https://am-restaurant-backend.onrender.com/api/users/login", data)
         .then((res) => {
             localStorage.setItem('login', JSON.stringify({
                 token : res.data.data.token,
