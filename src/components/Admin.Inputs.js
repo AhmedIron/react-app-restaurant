@@ -54,7 +54,7 @@ const AdminInputs = () => {
       data.append("food_image", food_image);
       await axios({
         method: "post",
-        url: "http://localhost:8000/api/products",
+        url: "https://am-restaurant-backend.onrender.com/api/products",
         data: data,
         headers: { "Content-Type": "multipart/form-data" },
       });

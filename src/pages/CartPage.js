@@ -11,7 +11,7 @@ const CartPage = () => {
     const count = cart.items.reduce((sum, product) => sum + product.quantity, 0 )
 
     const checkout = async () => {
-        await fetch('http://localhost:8000/api/checkout', {
+        await fetch('https://am-restaurant-backend.onrender.com/api/checkout', {
             method : "POST",
             headers: { "Content-Type": "multipart/form-data" },
             body: JSON.stringify({items: cart.items})

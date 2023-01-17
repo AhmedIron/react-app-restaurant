@@ -31,7 +31,7 @@ function Signup(e) {
 
     
       
-    await axios.post("http://localhost:8000/api/users/signup", data)
+    await axios.post("https://am-restaurant-backend.onrender.com/api/users/signup", data)
         .then((xxx) => {
           console.log(xxx);
           nav("/login")

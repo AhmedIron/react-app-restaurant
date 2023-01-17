@@ -8,7 +8,7 @@ const AdminDelete = () => {
   const [personsData, changedData] = useState([]);
   const fetchData = async () => {
     try {
-      await fetch("http://localhost:8000/api/products", {
+      await fetch("https://am-restaurant-backend.onrender.com/api/products", {
         method: "GET",
       })
         .then((data) => data.json())

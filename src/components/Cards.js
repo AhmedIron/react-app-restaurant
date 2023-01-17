@@ -78,7 +78,7 @@ const Cards = ({ data }) => {
                           <Card.Img
                             style={{ width: "200px", height: "150px", borderRadius:"15px" }}
                             variant="top"
-                            src={`http://localhost:8000/${item.food_image_upload}`}
+                            src={`http://192.168.1.17/${item.food_image_upload}`}
                           />
                         </div>
                       ) : (
