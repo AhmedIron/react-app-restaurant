@@ -89,6 +89,9 @@ function Login(e) {
       </Button>
 
     </Form>
+    <p style={{marginTop:"10px"}}>Use this account to be admin with full access to ADD and REMOVE products. </p>
+    <p>User Name : dodo</p>
+    <p>Password : 123456</p>
     </Container>
     <div style={{marginTop:"200px"}}><Footer /></div>
     

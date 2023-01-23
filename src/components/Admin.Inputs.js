@@ -191,10 +191,16 @@ const AdminInputs = () => {
                   type="file"
                   name="food_image_upload"
                   onChange={(e) => {
-                    setFood_image(e.target.files[0]);
+                    if(e.target.files[0].size > 1000000){
+                      setFood_image([])
+                    }else{
+                      setFood_image(e.target.files[0]);
+                    }
                   }}
                 />
               </InputGroup>
+              <p>To upload image  MUST BE  less than 1MB</p>
+
             </div>
 
             <div className={choose ? "linkShow" : "linkHide"}>
@@ -221,6 +227,7 @@ const AdminInputs = () => {
                   }}
                 />
               </InputGroup>
+              <p>Try this web-site to link images : https://www.pexels.com/search/burger/</p>
             </div>
             <input style={{ color: "white", height: "auto" }} type="submit" className="sub" />
           </form>
