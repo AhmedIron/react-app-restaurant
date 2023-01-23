@@ -4,6 +4,8 @@ import Card from "react-bootstrap/Card";
 import Down from "./down";
 import Button from "react-bootstrap/Button";
 
+
+
 const AdminDelete = () => {
   const [personsData, changedData] = useState([]);
   const fetchData = async () => {
@@ -37,21 +39,10 @@ const AdminDelete = () => {
 
   useEffect(() => {
     window.addEventListener("resize", setDimension);
-
     return () => {
       window.removeEventListener("resize", setDimension);
     };
   }, [screenSize]);
-
-  //   const onsub = async () => {
-  //     await fetch(`http://localhost:8000/api/products/${personsData.id}`, {
-  //       method: "DELETE",
-  //       headers: {
-  //         "Content-type": "application/json; charset=UTF-8",
-  //       },
-  //     });
-  //     window.location.reload(true)
-  //   };
 
   return (
     <div>
@@ -77,18 +68,18 @@ const AdminDelete = () => {
                       className="d-flex flex-row"
                     >
                       {item.food_image_upload !== null ? (
-                        <div style={{ width: "250px", height: "200px" }}>
+                        <div style={{ width: "180px", height: "150px" }}>
                           <Card.Img
-                            style={{ width: "250px", height: "200px" }}
+                            style={{ width: "100%", height: "100%", borderRadius:"10px" }}
                             variant="top"
-                            src={`http://localhost:8000/${item.food_image_upload}`}
+                            src={`https://am-restaurant-backend.onrender.com/${item.food_image_upload}`}
                             // src={item.food_image}
                           />
                         </div>
                       ) : (
-                        <div style={{ width: "250px", height: "200px" }}>
+                        <div style={{ width: "180px", height: "150px" }}>
                           <Card.Img
-                            style={{ width: "250px", height: "200px" }}
+                            style={{ width: "100%", height: "100%", borderRadius:"10px" }}
                             variant="top"
                             // src={`http://localhost:8000/${item.food_image}`}
                             src={item.food_image_link}
@@ -103,41 +94,39 @@ const AdminDelete = () => {
                         <h3 style={{ fontSize: "18px" }}>
                           Price : {item.price}$
                         </h3>
+
                         <Button
                           style={{ width: "100%", fontWeight: "bold" }}
                           variant="outline-danger"
+
                           onClick={async () => {
+                            const accessTokenObj = await JSON.parse(localStorage.getItem("login"));
+
                             await fetch(
-                              `http://localhost:8000/api/products/${item.id}`,
+                              `https://am-restaurant-backend.onrender.com/api/products/${item.id}`,
                               {
                                 method: "DELETE",
                                 headers: {
                                   "Content-type":
                                     "application/json; charset=UTF-8",
+                                    //send token 18/12/2022 8:00 am
+                                    'Authorization':`Bearer ${accessTokenObj.token}`
                                 },
                               }
                             );
-                            window.location.reload(true);
+                            window.location.reload(false)
                           }}
                         >
                           - Delete
                         </Button>
-                        <Button
-                          style={{
-                            width: "100%",
-                            fontWeight: "bold",
-                            marginTop: "5px",
-                          }}
-                          variant="outline-success"
-                        >
-                          Edit
-                        </Button>
+
+                        
                       </Card.Body>
                     </Card>
                   );
                 })
               ) : (
-                <p>nooooooooooooo</p>
+                <></>
               )}
             </Col>
           </Row>
@@ -190,24 +179,15 @@ const AdminDelete = () => {
                         <Card.Img
                           className="cardImage"
                           variant="top"
-                          src={`http://localhost:8000/${item.food_image_upload}`}
-                          // src={item.food_image}
+                          src={`https://am-restaurant-backend.onrender.com/${item.food_image_upload}`}
                         />
                       ) : (
                         <Card.Img
                           className="cardImage"
                           variant="top"
-                          // src={`http://localhost:8000/${item.food_image}`}
                           src={item.food_image_link}
                         />
                       )}
-                      {/* <Card.Img
-                  className="cardImage"
-                  variant="top"
-                  // src={`http://localhost:8000/${item.food_image}`}
-                  src={item.food_image_link}
-                  /> */}
-
                       <Card.Body>
                         <Card.Title>{item.food_name}</Card.Title>
                         <Card.Text>{item.food_ingredients}</Card.Text>
@@ -219,14 +199,12 @@ const AdminDelete = () => {
                           style={{ width: "100%", fontWeight: "bold" }}
                           variant="outline-danger"
                           onClick={async () => {
-                            const accessTokenObj = JSON.parse(localStorage.getItem("login"));
-                            console.log(accessTokenObj.token);
+                            const accessTokenObj = await JSON.parse(localStorage.getItem("login"));
                             await fetch(
-                              `http://localhost:8000/api/products/${item.id}`,
+                              `https://am-restaurant-backend.onrender.com/api/products/${item.id}`,
                               {
                                 method: "DELETE",
                                 headers: {
-                                  
                                   "Content-type":
                                     "application/json; charset=UTF-8",
                                     //send token 18/12/2022 8:00 am
@@ -234,29 +212,19 @@ const AdminDelete = () => {
                                 },
                               }
                             );
-                            window.location.reload(false);
-                            console.log(accessTokenObj.token);
+                            window.location.reload(false)
                           }}
                         >
                           - Delete
                         </Button>
-                        <Button
-                          style={{
-                            width: "100%",
-                            fontWeight: "bold",
-                            marginTop: "5px",
-                          }}
-                          variant="outline-success"
-                        >
-                          Edit
-                        </Button>
+                        
                       </Card.Body>
                     </Card>
                   </Col>
                 );
               })
             ) : (
-              <Down />
+              <></>
             )}
           </Row>
         </Container>

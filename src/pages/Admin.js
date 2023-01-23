@@ -9,6 +9,7 @@ import Onloading from "../components/onLoading";
 
 
 function Admin() {
+  window.scrollTo(0, 0);
     const [AdminDelet, setAdminDelet] = useState(false)
     const [AdminAdd, setAdminAdd] = useState(false)
 
@@ -40,8 +41,8 @@ function Admin() {
       <div className={AdminDelet ? "DeleteShow" : "DeleteHide"}>
       <AdminDelete />
       </div>
-
-      <Footer />
+<div style={{marginTop: "268px"}}><Footer/></div>
+      
     </div>
   );
 }

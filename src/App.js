@@ -9,6 +9,7 @@ import CartPage from "./pages/CartPage";
 import CartProvider from "./CartContext";
 import SuccessPay from "./components/Success.pay"
 import ErrorPay from "./components/Error.pay";
+import AlreadyLogIn from "./components/alreadyLogIn";
 
 function App() {
  
@@ -19,9 +20,9 @@ function App() {
   <CartProvider>  
     <BrowserRouter>
     <Routes>
-      < Route path="/cancel" element={ <ErrorPay /> }/>
-      < Route path="/success" element={ <SuccessPay /> }/>
-      < Route path="/cart" element={ <CartPage /> }/>
+      < Route path="/cancel" element={  <AlreadyLogIn><ErrorPay /></AlreadyLogIn> }/>
+      < Route path="/success" element={ <AlreadyLogIn><SuccessPay /></AlreadyLogIn> }/>
+      < Route path="/cart" element={ <AlreadyLogIn><CartPage /></AlreadyLogIn> }/>
       < Route path="/login" element={<AlreadyAuth><Login /></AlreadyAuth> }/>
       < Route path="/signup" element={<AlreadyAuth><Signup /></AlreadyAuth> }/>
       < Route path="/" element={ <Home /> }/>

@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import Onloading from '../components/onLoading';
 
 function Login(e) {
+  window.scrollTo(0, 0);
 
   const navigate = useNavigate()
 
@@ -89,7 +90,8 @@ function Login(e) {
 
     </Form>
     </Container>
-    <Footer />
+    <div style={{marginTop:"200px"}}><Footer /></div>
+    
     </div>
   );
 }

@@ -10,7 +10,7 @@ const Onloading = ()=> {
         setInterval(() => {
             setLoading(false)
         }, 1000);
-      }, []);
+    }, []);
     return(
         <div>
 

@@ -2,6 +2,7 @@ import { Container, Alert } from "react-bootstrap"
 
 
 const ErrorPay = () => {
+    window.scrollTo(0, 0);
 
     return(
         <Container>

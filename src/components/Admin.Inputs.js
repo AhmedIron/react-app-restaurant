@@ -144,9 +144,8 @@ const AdminInputs = () => {
               <Button
                 style={{
                   border: "2px solid rgb(25, 135, 84)",
-                  fontSize: "30px",
-                  color: "rgb(148 216 255)",
-                  fontSize:"20px"
+                  color: "white",
+                  fontSize:"20px",
                 }}
                 className="upLoad"
                 variant="outline-primary"
@@ -159,9 +158,8 @@ const AdminInputs = () => {
               <Button
                 style={{
                   border: "2px solid rgb(25, 135, 84)",
-                  fontSize: "30px",
-                  color: "rgb(148 216 255)",
-                  fontSize:"20px"
+                  color: "white",
+                  fontSize:"20px",
                 }}
                 className="upLoad"
                 variant="outline-primary"
@@ -214,7 +212,7 @@ const AdminInputs = () => {
                 </InputGroup.Text>
                 <Form.Control
                   className="linkHide"
-                  style={{ border: "2px solid green", color:"white", fontSize:"smaller" }}
+                  style={{ border: "2px solid green", color:"black", fontSize:"smaller" }}
                   aria-label="Large"
                   aria-describedby="inputGroup-sizing-sm"
                   name="food_image_link"
@@ -224,8 +222,7 @@ const AdminInputs = () => {
                 />
               </InputGroup>
             </div>
-
-            <input style={{ color: "white" }} type="submit" className="sub" />
+            <input style={{ color: "white", height: "auto" }} type="submit" className="sub" />
           </form>
         </div>
       </Container>

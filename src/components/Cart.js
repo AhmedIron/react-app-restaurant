@@ -10,7 +10,7 @@ const Cart = () => {
     return(
         
         <div className="mainDivCart">
-            <Link to="/cart"><img src="cart.png" alt="cart" /><div className="counter">{count}</div></Link>
+            <Link to="/cart"><img style={{width:"48px"}} src="cart.png" alt="cart" /><div className="counter">{count}</div></Link>
         </div>
     )
 }

@@ -3,14 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 function Slider() {
   return (
     <div className="MainSlider">
-    <Carousel fade>
-      {/* <Carousel.Item className="boxz">
-        <img
-          className="d-block w-100 imgz"
-          src="/food88.jpg"
-          alt="First slide"
-        />
-      </Carousel.Item> */}
+    <Carousel controls={false} indicators={false} interval={2000}>
 
       <Carousel.Item className="boxz">
         <img

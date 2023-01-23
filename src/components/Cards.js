@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { CartContext } from "../CartContext";
 
 
+
 const Cards = ({ data }) => {
 
   
@@ -51,7 +52,7 @@ const Cards = ({ data }) => {
                 type="search"
                 placeholder="Search ... "
                 className="me-2 inputSearch border-danger"
-                style={{ zIndex: "5", marginTop: "10px", backgroundColor:"black", color:"white" }}
+                style={{ zIndex: "5", marginTop: "15px", backgroundColor:"black", color:"white" }}
               />
               {data
                 .filter((val) => {
@@ -78,7 +79,7 @@ const Cards = ({ data }) => {
                           <Card.Img
                             style={{ width: "200px", height: "150px", borderRadius:"15px" }}
                             variant="top"
-                            src={`http://192.168.1.17/${item.food_image_upload}`}
+                            src={`https://am-restaurant-backend.onrender.com${item.food_image_upload}`}
                           />
                         </div>
                       ) : (
@@ -90,14 +91,12 @@ const Cards = ({ data }) => {
                           />
                         </div>
                       )}
-                      <Card.Body style={{ fontSize: "6px" , backgroundColor:"rgb(33, 28, 28)" }}>
-                        <Card.Title>{item.food_name}</Card.Title>
-                        <Card.Text style={{ fontSize: "10px" }}>
-                          {item.food_ingredients}
-                        </Card.Text>
-                        <h3 style={{ fontSize: "12px" }}>
+                      <Card.Body style={{ fontSize: "12px" , backgroundColor:"rgb(33, 28, 28)" }}>
+                        <p style={{ marginBottom:"0px", fontSize: "16px"}}>{item.food_name}</p>
+                        <p style={{ marginBottom:"0px" }}>{item.food_ingredients}</p>
+                        <p style={{ marginBottom:"5px" }}>
                           Price : {item.price}$
-                        </h3>
+                        </p>
 
 
                         {
@@ -145,7 +144,7 @@ const Cards = ({ data }) => {
               type="search"
               placeholder="Search ... "
               className="me-2 inputSearch border-danger"
-              style={{ zIndex: "5", marginTop: "10px", backgroundColor:"black", color:"white" }}
+              style={{ zIndex: "5", marginTop: "15px", backgroundColor:"black", color:"white" }}
             />
             {data
               .filter((val) => {
@@ -182,7 +181,7 @@ const Cards = ({ data }) => {
                         <Card.Img
                           className="cardImage"
                           variant="top"
-                          src={`http://localhost:8000/${item.food_image_upload}`}
+                          src={`https://am-restaurant-backend.onrender.com/${item.food_image_upload}`}
                         />
                       ) : (
                         <Card.Img
@@ -192,11 +191,11 @@ const Cards = ({ data }) => {
                         />
                       )}
                       <Card.Body>
-                        <Card.Title>{item.food_name}</Card.Title>
-                        <Card.Text>{item.food_ingredients}</Card.Text>
-                        <h4 style={{ fontSize: "18px" }}>
+                        <p>{item.food_name}</p>
+                        <p>{item.food_ingredients}</p>
+                        <p>
                           Price : {item.price}$
-                        </h4>
+                        </p>
 
 
                         {

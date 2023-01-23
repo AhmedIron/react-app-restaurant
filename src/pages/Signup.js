@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import Onloading from '../components/onLoading';
 
 function Signup(e) {
+  window.scrollTo(0, 0);
   const nav = useNavigate()
 
   const [namez, setNamez] = useState();
@@ -69,7 +70,7 @@ function Signup(e) {
 
     </Form>
     </Container>
-    <Footer />
+    <div style={{marginTop:"200px"}}><Footer /></div>
     </div>
   );
 }

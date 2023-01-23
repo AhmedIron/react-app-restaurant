@@ -5,6 +5,7 @@ import { useContext } from "react"
 import { CartContext } from "../CartContext"
 
 const CartPage = () => {
+    window.scrollTo(0, 0);
 
     const cart = useContext(CartContext)
     console.log(cart.items);
@@ -53,7 +54,7 @@ const CartPage = () => {
                     </div>
 
                     <div>
-                        <h4>{productData.food_name}</h4>
+                        <h4 style={{color:"red"}}>{productData.food_name}</h4>
                         <h5 style={{fontSize:"small"}}>{productData.food_ingredients}</h5>
                         <h6>Price per item : ${productData.price} * <span>{currentProduct.quantity}</span></h6>
                         <h5>total : ${totalPricePerItem}</h5>
@@ -79,12 +80,12 @@ const CartPage = () => {
             Buy Your Delicious Food
         </Button>
         </>
-        ) : (<Alert className="alertx" variant="danger" style={{display:"flex", alignItems:"center", justifyContent:"center"}}>No Food Added</Alert>)
+        ) : (<Alert className="alertx" variant="danger" style={{display:"flex", alignItems:"center", justifyContent:"center", backgroundColor:"black", color:"red"}}>No Food Added</Alert>)
     }
         
 </Container>
 <div className="cartFooter">
-<Footer />
+<div style={{marginTop:"200px"}}><Footer /></div>
 </div>
 </>
 
