@@ -144,7 +144,7 @@ const AdminInputs = () => {
               <Button
                 style={{
                   border: "2px solid rgb(25, 135, 84)",
-                  color: "white",
+                  color: "gray",
                   fontSize:"20px",
                 }}
                 className="upLoad"
@@ -158,7 +158,7 @@ const AdminInputs = () => {
               <Button
                 style={{
                   border: "2px solid rgb(25, 135, 84)",
-                  color: "white",
+                  color: "gray",
                   fontSize:"20px",
                 }}
                 className="upLoad"
@@ -199,7 +199,7 @@ const AdminInputs = () => {
                   }}
                 />
               </InputGroup>
-              <p>To upload image  MUST BE  less than 1MB</p>
+              <p style={{marginTop:"10px", color:"gray"}}>To upload image  MUST BE  less than 1MB</p>
 
             </div>
 
@@ -227,7 +227,7 @@ const AdminInputs = () => {
                   }}
                 />
               </InputGroup>
-              <p>Try this web-site to link images : https://www.pexels.com/search/burger/</p>
+              <p style={{marginTop:"10px", color:"gray"}}>Try this web-site to link images : https://www.pexels.com/search/burger/</p>
             </div>
             <input style={{ color: "white", height: "auto" }} type="submit" className="sub" />
           </form>
